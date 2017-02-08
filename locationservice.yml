@@ -10,7 +10,7 @@ spring:
   hibernate:
    ddl-auto: update
 server:
-  port: 8081
+  port: 8082
   
 ---
   
@@ -38,6 +38,4 @@ spring:
    host: rabbitmq
    port: 5672
    username: spring
-   password: spring  
-server:
-  port: 8081
+   password: spring
