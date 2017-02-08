@@ -24,9 +24,9 @@ cancel:
   RoutingKey: cancelOrderRoutingKey 
 confirm:
  order:
-  queue:
-   name: confirmedOrderQueue
   RoutingKey: confirmOrderRoutingKey
+  queue:
+   name: confirmedOrderQueue  
   Response:
    queue: confirmOrderResponseQueue2
    RoutingKey: confirmOrderResponseRoutingKey  
