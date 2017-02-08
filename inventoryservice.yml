@@ -60,9 +60,3 @@ spring:
    port: 5672
    username: spring
    password: spring
-   
-
-
-   
-   
-
