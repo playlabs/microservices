@@ -11,6 +11,25 @@ spring:
    ddl-auto: update
 server:
   port: 8083
+queue:
+ name: microserviceAppQueue
+exchange:
+ name: orderToInventoryExchange
+routing:
+ key: fixedRoutingKey
+cancel:
+ order:
+  queue:
+   name: cancelledOrderQueue
+  RoutingKey: cancelOrderRoutingKey 
+confirm:
+ order:
+  queue:
+   name: confirmedOrderQueue
+  RoutingKey: confirmOrderRoutingKey
+  Response:
+   queue: confirmOrderResponseQueue2
+   RoutingKey: confirmOrderResponseRoutingKey  
   
 ---
   
@@ -41,3 +60,9 @@ spring:
    port: 5672
    username: spring
    password: spring
+   
+
+
+   
+   
+
