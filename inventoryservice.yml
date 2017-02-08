@@ -1,0 +1,43 @@
+spring:
+ profiles: dev
+ datasource:
+  url: jdbc:mysql://localhost:3306/sakila
+  username: root
+  password: password
+  driver-class-name: com.mysql.jdbc.Driver
+ jpa:
+  show-sql: true
+  hibernate:
+   ddl-auto: update
+server:
+  port: 8083
+  
+---
+  
+spring:
+ profiles: test
+ jpa:
+  database: HSQL
+  show-sql: true
+  hibernate:
+   ddl-auto: update
+   
+---
+
+spring:
+ profiles: k8s
+ datasource:
+  url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
+  username: inventory_user
+  password: user123
+  driver-class-name: com.mysql.jdbc.Driver
+ jpa:
+  show-sql: true
+  hibernate:
+   ddl-auto: update
+ rabbitmq:
+   addresses: rabbitmq:5672
+   host: rabbitmq
+   port: 5672
+   username: spring
+   password: spring
