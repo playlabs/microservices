@@ -10,7 +10,10 @@ spring:
   hibernate:
    ddl-auto: update
 server:
-  port: 8083  
+  port: 8084
+inventory:
+ host: localhost
+ port: 8083
 exchange:
  name: orderToInventoryExchange
 routing:
