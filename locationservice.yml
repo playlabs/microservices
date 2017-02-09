@@ -1,39 +1,27 @@
 spring:
- profiles: dev
- datasource:
-  url: jdbc:mysql://localhost:3306/sakila
-  username: root
-  password: password
-  driver-class-name: com.mysql.jdbc.Driver
- jpa:
-  show-sql: true
-  hibernate:
-   ddl-auto: update
+    profiles: prod
+    datasource:
+        url: jdbc:mysql://localhost:3306/sakila
+        username: root
+        password: password
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true  
 server:
-  port: 8082
-  
----
-  
-spring:
- profiles: test
- jpa:
-  database: HSQL
-  show-sql: true
-  hibernate:
-   ddl-auto: update
+  port: 8082  
    
 ---
 
 spring:
- profiles: k8s
- datasource:
-  url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_location_db
-  username: location_user
-  password: user123
-  driver-class-name: com.mysql.jdbc.Driver
- jpa:
-  show-sql: true
- rabbitmq:
+    profiles: k8s
+    datasource:
+        url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_location_db
+        username: location_user
+        password: user123
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true
+rabbitmq:
    addresses: rabbitmq:5672
    host: rabbitmq
    port: 5672
