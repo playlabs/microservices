@@ -1,60 +1,48 @@
 spring:
- profiles: dev
- datasource:
-  url: jdbc:mysql://localhost:3306/sakila
-  username: root
-  password: password
-  driver-class-name: com.mysql.jdbc.Driver
- jpa:
-  show-sql: true
-  hibernate:
-   ddl-auto: update
+    profiles: prod
+    datasource:
+        url: jdbc:mysql://localhost:3306/sakila
+        username: root
+        password: password
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true 
 server:
-  port: 8083
+    port: 8083
 queue:
- name: microserviceAppQueue
+    name: microserviceAppQueue
 exchange:
- name: orderToInventoryExchange
+    name: orderToInventoryExchange
 routing:
- key: fixedRoutingKey
+    key: fixedRoutingKey
 cancel:
- order:
-  queue:
-   name: cancelledOrderQueue
-  routingKey: cancelOrderRoutingKey 
+    order:
+        queue:
+            name: cancelledOrderQueue
+        routingKey: cancelOrderRoutingKey 
 confirm:
- order:
-  routingKey: confirmOrderRoutingKey
-  queue:
-   name: confirmedOrderQueue  
-  response:
-   queue: confirmOrderResponseQueue2
-   routingKey: confirmOrderResponseRoutingKey
+    order:
+        routingKey: confirmOrderRoutingKey
+        queue:
+            name: confirmedOrderQueue  
+        response:
+            queue: confirmOrderResponseQueue2
+            routingKey: confirmOrderResponseRoutingKey
   
----
-  
-spring:
- profiles: test
- jpa:
-  database: HSQL
-  show-sql: true
-  hibernate:
-   ddl-auto: update
+
    
 ---
 
 spring:
- profiles: k8s
- datasource:
-  url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
-  username: inventory_user
-  password: user123
-  driver-class-name: com.mysql.jdbc.Driver
- jpa:
-  show-sql: true
-  hibernate:
-   ddl-auto: update
- rabbitmq:
+    profiles: k8s
+    datasource:
+        url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
+        username: inventory_user
+        password: user123
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true
+rabbitmq:
    addresses: rabbitmq:5672
    host: rabbitmq
    port: 5672
