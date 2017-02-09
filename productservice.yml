@@ -1,25 +1,11 @@
 spring:
- profiles: prod
- datasource:
-  url: jdbc:mysql://localhost:3306/sakila
-  username: root
-  password: password
-  driver-class-name: com.mysql.jdbc.Driver
- jpa:
-  show-sql: true
-  hibernate:
-   ddl-auto: update
-server:
-  port: 8081
-  
----
-  
-spring:
- profiles: test
- jpa:
-  database: HSQL
-  show-sql: true
-  hibernate:
-   ddl-auto: update
+    profiles: prod
+    datasource:
+        url: jdbc:mysql://localhost:3306/sakila
+        username: root
+        password: password
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true  
 server:
   port: 8081
