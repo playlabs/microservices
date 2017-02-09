@@ -28,9 +28,7 @@ confirm:
         response:
             queue: confirmOrderResponseQueue2
             routingKey: confirmOrderResponseRoutingKey
-  
-
-   
+            
 ---
 
 spring:
