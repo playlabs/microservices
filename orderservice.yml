@@ -30,7 +30,7 @@ confirm:
             name: confirmedOrderQueue
         response:
             queue: confirmOrderResponseQueue2
-            routingKey: confirmOrderResponseRoutingKey
+            RoutingKey: confirmOrderResponseRoutingKey
 dead:
     letter:
         queue:
