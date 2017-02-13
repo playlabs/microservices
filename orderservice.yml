@@ -20,7 +20,7 @@ cancel:
     order:
         queue:
             name: cancelledOrderQueue
-        routingKey: cancelOrderRoutingKey
+        RoutingKey: cancelOrderRoutingKey
         
         
 confirm:
