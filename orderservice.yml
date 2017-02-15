@@ -21,8 +21,6 @@ cancel:
         queue:
             name: cancelledOrderQueue
         RoutingKey: cancelOrderRoutingKey
-        
-        
 confirm:
     order:
         RoutingKey: confirmOrderRoutingKey
