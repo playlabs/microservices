@@ -21,7 +21,7 @@ rabbitmq:
    username: guest
    password: guest
    
- -------------
+ ---
  spring:
     profiles: dev
     datasource:
