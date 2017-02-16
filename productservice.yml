@@ -20,3 +20,20 @@ rabbitmq:
    port: 5671
    username: guest
    password: guest
+   
+ -------------
+ spring:
+    profiles: dev
+    datasource:
+        url: jdbc:mysql:localhost:3306/dev_db
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true
+    rabbitmq:
+       addresses: localhost:5672
+       host: localhost
+       port: 5672
+       username: guest
+       password: guest
