@@ -21,8 +21,8 @@ rabbitmq:
    username: guest
    password: guest
    
-test: 
-   url: helo
+test : 
+    url: helo
    port: 9001
    
 ---
