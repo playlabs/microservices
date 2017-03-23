@@ -20,7 +20,7 @@ rabbitmq:
    port: 5671
    username: guest
    password: guest
- test: 
+test: 
     url: helo
     port: 9001
    
