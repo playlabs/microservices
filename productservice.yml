@@ -16,7 +16,7 @@ redis:
     
 rabbitmq:
    addresses: 10.0.0.35:5671
-   host: configmq
+   host: barathmq
    port: 5671
    username: guest
    password: guest
