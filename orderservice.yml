@@ -6,12 +6,7 @@ spring:
         password: root
         driver-class-name: com.mysql.jdbc.Driver
     jpa:
-        show-sql: true   
-
-redis:  
-    host: 127.0.0.1 
-    port: 6379 
-    
+        show-sql: true       
 server:
     port: 8084
 inventory:
@@ -26,6 +21,8 @@ cancel:
         queue:
             name: cancelledOrderQueue
         RoutingKey: cancelOrderRoutingKey
+        
+        
 confirm:
     order:
         RoutingKey: confirmOrderRoutingKey
