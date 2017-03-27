@@ -1,12 +1,20 @@
 spring:
     profiles: prod
+        include: default,rmq
     datasource:
-        url: jdbc:mysql://localhost:3306/microservices
-        username: root
-        password: root
-        driver-class-name: com.mysql.jdbc.Driver
-    jpa:
-        show-sql: true       
+    url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_order_db
+    username: order_user
+    password: user123
+    driver-class-name: com.mysql.jdbc.Driver
+  jpa:
+    show-sql: true
+  rabbitmq:
+    addresses: rabbitmq:5672
+    host: rabbitmq
+    port: 5672
+    username: spring
+    password: spring
+    
 server:
     port: 8084
 inventory:
@@ -38,24 +46,41 @@ dead:
    
 ---
 
+
 spring:
-    profiles: k8s
+    profiles: cf
+        include: rmq
     datasource:
-        url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
-        username: order_user
-        password: user123
+        url: jdbc:mysql://localhost:3306/cf_dev_db
+        username: root
+        password: root
         driver-class-name: com.mysql.jdbc.Driver
     jpa:
         show-sql: true
         hibernate:
             ddl-auto: update
-rabbitmq:
-   addresses: rabbitmq:5672
-   host: rabbitmq
-   port: 5672
-   username: spring
-   password: spring
-   
-inventory:
-    host: inventory-app
-    port: 8083
+
+    rabbitmq:
+        addresses: localhost:5672
+        host: localhost
+        port: 5672
+        username: guest
+        password: guest
+
+server:
+    port: 9015
+    
+---
+
+spring:
+    profiles: dev
+        include: default
+    datasource:
+        url: jdbc:mysql://localhost:3306/dev_db
+        username: root
+        password: root
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
