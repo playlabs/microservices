@@ -1,6 +1,6 @@
 spring:
     profiles:
-        active: prod
+       active: prod
         include: default,rmq
     datasource:
         url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
