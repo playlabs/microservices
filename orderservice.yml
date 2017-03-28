@@ -79,7 +79,7 @@ spring:
         active: dev
         include: default
     datasource:
-        url: jdbc:mysql://localhost:3306/dev_db
+        url: jdbc:mysql://localhost:3306/microservices
         username: root
         password: root
         driver-class-name: com.mysql.jdbc.Driver
