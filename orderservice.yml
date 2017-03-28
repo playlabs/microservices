@@ -1,5 +1,6 @@
 spring:
-    profiles: prod
+    profiles: 
+        active: prod
         include: default,rmq
     datasource:
     url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_order_db
@@ -48,7 +49,8 @@ dead:
 
 
 spring:
-    profiles: cf
+    profiles: 
+        active: cf
         include: rmq
     datasource:
         url: jdbc:mysql://localhost:3306/cf_dev_db
@@ -73,7 +75,8 @@ server:
 ---
 
 spring:
-    profiles: dev
+    profiles: 
+        active: dev
         include: default
     datasource:
         url: jdbc:mysql://localhost:3306/dev_db
