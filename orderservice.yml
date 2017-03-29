@@ -21,29 +21,38 @@ server:
 inventory:
     host: localhost
     port: 8083
-exchange:
-    name: orderToInventoryExchange
-routing:
-    key: fixedRoutingKey
-cancel:
-    order:
-        queue:
-            name: cancelledOrderQueue
-        RoutingKey: cancelOrderRoutingKey
-        
-        
 confirm:
-    order:
-        RoutingKey: confirmOrderRoutingKey
-        queue:
-            name: confirmedOrderQueue
-        response:
-            queue: confirmOrderResponseQueue2
-            RoutingKey: confirmOrderResponseRoutingKey
+  order:
+    request: 
+        queue : confirmedOrderQueue
+        routingKey : confirmOrderRoutingKey
+    response:
+        queue : confirmOrderResponseQueue2
+        routingKey : confirmOrderResponseRoutingKey
+
+cancel:
+  order:
+    request:
+      queue : cancelledOrderQueue
+      routingKey : cancelOrderRoutingKey
+
+
+routing:
+  key : fixedRoutingKey
+
 dead:
     letter:
         queue:
-            name:deadLetterQueue
+            name: deadLetterQueue
+
+server:
+  port : 9023
+
+queue:
+  name : microserviceAppQueue
+
+exchange:
+  name : orderToInventoryExchange
    
 ---
 
