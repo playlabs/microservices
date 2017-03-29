@@ -21,6 +21,8 @@ server:
 inventory:
     host: localhost
     port: 8083
+    
+    
 confirm:
   order:
     request: 
@@ -55,7 +57,6 @@ exchange:
   name : orderToInventoryExchange
    
 ---
-
 
 spring:
     profiles: 
