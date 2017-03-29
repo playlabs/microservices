@@ -15,37 +15,7 @@ spring:
         port: 5672
         username: spring
         password: spring
-confirm:
-    order:
-        request:
-          queue: confirmedOrderQueue
-          routingKey : confirmOrderRoutingKey
-        response:
-          queue : confirmOrderResponseQueue2
-          routingKey : confirmOrderResponseRoutingKey
 
-cancel:
-  order:
-    queue: cancelledOrderQueue
-    routingKey : cancelOrderRoutingKey
-
-
-routing:
-  key : fixedRoutingKey
-
-dead:
-    letter:
-        queue:
-            name: deadLetterQueue
-
-server:
-  port : 9024
-
-queue:
-  name : microserviceAppQueue
-
-exchange:
-  name : orderToInventoryExchange
             
 ---
 
@@ -86,5 +56,36 @@ spring:
         driver-class-name: com.mysql.jdbc.Driver
     jpa:
         show-sql: true
+confirm:
+    order:
+        request:
+          queue: confirmedOrderQueue
+          routingKey : confirmOrderRoutingKey
+        response:
+          queue : confirmOrderResponseQueue2
+          routingKey : confirmOrderResponseRoutingKey
+
+cancel:
+  order:
+    queue: cancelledOrderQueue
+    routingKey : cancelOrderRoutingKey
+
+
+routing:
+  key : fixedRoutingKey
+
+dead:
+    letter:
+        queue:
+            name: deadLetterQueue
+
+server:
+  port : 9024
+
+queue:
+  name : microserviceAppQueue
+
+exchange:
+  name : orderToInventoryExchange
 
    
