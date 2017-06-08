@@ -114,12 +114,46 @@ spring:
             ddl-auto: update
 
     rabbitmq:
-        addresses: 
-        host: 
+        addresses: localhost:5672
+        host: localhost
         port: 5672
         username: guest
         password: guest
 
 server:
     port: 9015
+    
+confirm:
+  order:
+    request: 
+        queue : confirmedOrderQueue
+        routingKey : confirmOrderRoutingKey
+    response:
+        queue : confirmOrderResponseQueue2
+        routingKey : confirmOrderResponseRoutingKey
+
+cancel:
+  order:
+    request:
+      queue : cancelledOrderQueue
+      routingKey : cancelOrderRoutingKey
+
+
+routing:
+  key : fixedRoutingKey
+
+dead:
+    letter:
+        queue:
+            name: deadLetterQueue
+
+server:
+  port : 9023
+
+queue:
+  name : microserviceAppQueue
+
+exchange:
+  name : orderToInventoryExchange
+   
     
