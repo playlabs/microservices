@@ -147,8 +147,7 @@ dead:
         queue:
             name: deadLetterQueue
 
-server:
-  port : 9023
+
 
 queue:
   name : microserviceAppQueue
