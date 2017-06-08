@@ -105,6 +105,6 @@ spring:
         addresses: localhost:5672
         host: localhost
         port: 5672
-        username: spring
-        password: spring
+        username: guest
+        password: guest
    
