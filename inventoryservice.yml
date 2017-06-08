@@ -87,5 +87,24 @@ queue:
 
 exchange:
   name : orderToInventoryExchange
+  
+---
 
+spring:
+    profiles:
+        active: openshift
+        include: rmq
+    datasource:
+        url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_inventory_db
+        username: inventory_user
+        password: user123
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true 
+    rabbitmq:
+        addresses: localhost:5672
+        host: localhost
+        port: 5672
+        username: spring
+        password: spring
    
