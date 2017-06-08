@@ -114,8 +114,8 @@ spring:
             ddl-auto: update
 
     rabbitmq:
-        addresses: localhost:5672
-        host: localhost
+        addresses: openshift-rabbitmq.offshore-os.magellancloud.com
+        host: openshift-rabbitmq.offshore-os.magellancloud.com
         port: 5672
         username: guest
         password: guest
