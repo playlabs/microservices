@@ -96,3 +96,30 @@ spring:
         show-sql: true
         hibernate:
             ddl-auto: update
+
+---
+
+spring:
+    profiles: 
+        active: openshift
+        include: rmq
+    datasource:
+        url: jdbc:mysql://offshoremsdb.cm5sjo7cm7pi.us-east-1.rds.amazonaws.com:3306/ms_order_db
+        username: order_user
+        password: user123
+        driver-class-name: com.mysql.jdbc.Driver
+    jpa:
+        show-sql: true
+        hibernate:
+            ddl-auto: update
+
+    rabbitmq:
+        addresses: 
+        host: 
+        port: 5672
+        username: guest
+        password: guest
+
+server:
+    port: 9015
+    
