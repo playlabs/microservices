@@ -85,7 +85,7 @@ server:
 
 logging:
     level: 
-        root:info
+        root: info
 spring:
     profiles: 
         active: dev
