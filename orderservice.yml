@@ -83,9 +83,7 @@ server:
     
 ---
 
-logging:
-    level: 
-        root: info
+
 spring:
     profiles: 
         active: dev
@@ -106,9 +104,6 @@ spring:
 
 ---
 
-logging:
-    level:
-        root: debug
 spring:
     profiles: 
         active: openshift
